@@ -4,9 +4,9 @@ This is a serverless application using Amazon Web Services (AWS).  A time-based 
 
 Whether you have any knowledge of AWS or coding, this documentation written with the intention to provide everything you need to implement this application.
 
-**Level:** Beginner
+>**Level:** Beginner
 
-**Cost:** Free Tier
+>**Cost:** Free Tier
 
 *Disclaimer:* I do not claim to be an expert. This is my first AWS project and my first time using Python.
 
