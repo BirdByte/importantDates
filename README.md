@@ -155,6 +155,8 @@ if today.day == 1:
 ```
 
 ### Step 6 - Create Cloudwatch Event
+Create a CloudWatch timed event that will trigger the Lambda function to execute once a day.
+
 1. In the Designer at the top of the top, click the **+ Add trigger** button
 2. Click the dropdown and type **CloudWatch**. Select **CloudWatch Events**
 3. In the Rule dropdown, select **Create a new rule**
