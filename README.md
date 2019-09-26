@@ -6,7 +6,7 @@ Whether you have any knowledge of AWS or coding, this documentation written with
 
 >**Level:** Beginner
 
->**Cost:** Free Tier
+>**Cost:** Free Tier.  Do not send over 100 SMS messages per month.
 
 *Disclaimer:* I do not claim to be an expert. This is my first AWS project and my first time using Python.
 
@@ -67,6 +67,20 @@ AWS requires that we grant services permission to talk to each other.  You are c
 12. Click **Save**
 
 ### Step 4 - Update the Lambda Function
+1. Optional - Code line 23, update region. If in the US changing this is not necessary. https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html
+
+```python
+region_name="us-east-1"     #---- EDIT HERE, if necessary ------
+```
+
+2. Code line 33, add your important dates by editing and copy and pasting example 
+
+```python
+    # --- EDIT HERE - ADD YOUR IMPORTANT DATES -----
+    "Amy's Birthday": "1900-06-01",
+    # --- END EDIT -----
+```
+
 
 ### Step 5 - Test Lambda Function
 
