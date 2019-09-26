@@ -15,7 +15,7 @@ Whether you have any knowledge of AWS or coding, this documentation written with
 </p>
 
 
-## Tutorial in progress (Last Modified: Sept 2019)
+## --------------- Tutorial in progress --------------------
 
 ### Step 1 - Create an AWS Account, if necessary
 While this project stays within the free tier account provided by AWS, you will still need to enter **credit card** information to complete the account sign-up.
