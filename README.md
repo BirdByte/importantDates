@@ -10,6 +10,9 @@ Whether you have any knowledge of AWS or coding, this documentation written with
 
 *Disclaimer:* I do not claim to be an expert. This is my first AWS project and my first time using Python.
 
+<p align="center">
+  <img src="/images/diagram.PNG"/>
+</p>
 
 
 ## Tutorial in progress
