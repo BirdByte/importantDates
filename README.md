@@ -37,24 +37,38 @@ AWS requires that we grant services permission to talk to each other.  You are c
 2. Select **Roles** on the left
 3. Select **Create role** button
 4. Ensure **AWS service** box is selected
-5. Under choose the service that wilol use this role, select **Lambda**
+5. Under Choose the service that will use this role, select **Lambda**
 6. Select **Next:Permissions**
 7. In the **Filter Policies** input, type “AWSLambdaBasic”.
 8. Select the AWS Managed Policy **AWSLambdaBasicExecutionRole**. This gives permission for Lambda to write log files to CloudWatch.
 9. Select **Next: Tags**
 10. Select **Next: Review**
-11. Input a **Role Name** and select **Create Role**
-12. Select the newly created role from the list.
-13. Select **Attach policies**
-14. Select **JSON** tab.
-15. Open the role.txt in GitHub. Copy and paste the contents into the JSON text area. This gives your Lambda function permission to publish to SNS.
+11. Input a **Role Name**, such as "myLambdaSNSRole" and select **Create Role**
+12. Select the newly created role from the list by clicking on the role name
+13. Select **Add inline policy**
+14. Select **JSON** tab and **delete** all contents.
+15. Open the **role.txt** in GitHub. Copy and paste the contents into the JSON text area. This gives your Lambda function permission to publish to SNS.
 16. Select **Review Policy**
-17. .... in progress
-
+17. Enter a **Name**, such as "mySNSPublishOnlyPolicy"
+18. Select **Create policy**
 
 ### Step 3 - Create Lambda Function
+1. Select the **Services** dropdown in the navigation bar
+2. In the **Find Services** input box, type “Lambda” and press Enter
+3. Click the **Create Function** button
+4. Ensure that **Author from scratch** is selected on the Create Function page
+5. Input a **function name**, such as “importantDates”
+6. In the **Runtime** dropdown, select “Python 3.7”.
+7. Click **Choose or create an execution role** to expand
+8. Select **Use an existing role**
+9. In the **existing role** enter your **IAM role name**, such as "myLambdaSNSRole"
+10. Click **Create function**. This may take some time to complete.
+11. Scroll down to the code editor.  Delete the contents.  Copy and paste the contents from the **importantDates.py** file in Github into the editor
+12. Click **Save**
 
-### Step 4 - Test Lambda Function
+### Step 4 - Update the Lambda Function
 
-### Step 5 - Create Cloudwatch Event
+### Step 5 - Test Lambda Function
+
+### Step 6 - Create Cloudwatch Event
 
