@@ -174,3 +174,11 @@ if today.day == 1:
 
 7. Click **Add**
 
+# Congratulations! You're done!
+
+### Step 7 (optional) - Still worried about costs?
+1. Select the **Services** dropdown in the navigation bar
+2. In the **Find Services** input box, type “Billing” and press Enter
+3. Select **Billing preferences**
+4. Ensure that **Receive Free Tier Usage Alerts** is checked.  This may be on by default, I couldn't remember.
+5. Click **Bills**. Under AWS Service charges you can monitor your usage.
