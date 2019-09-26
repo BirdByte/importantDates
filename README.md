@@ -31,6 +31,8 @@ While this project stays within the free tier account provided by AWS, you will 
 9. **Sign in** to the console
 
 ### Step 2 - Create IAM Role
+AWS requires that we grant services permission to talk to each other.  You are creating a role that will allow Lambda to interact with CloudWatch and SNS. We will follow the rule of least privilage by only giving SNS publishing permissions.
+
 1. In the **Find Services** input box, type “IAM” and press Enter
 2. Select **Roles** on the left
 3. Select **Create role** button
@@ -45,7 +47,7 @@ While this project stays within the free tier account provided by AWS, you will 
 12. Select the newly created role from the list.
 13. Select **Attach policies**
 14. Select **JSON** tab.
-15. Open the role.txt in GitHub. Copy and paste the contents into the JSON text area. This gives your Lambda function permission to publish to SNS, this following the rule of least permissions.
+15. Open the role.txt in GitHub. Copy and paste the contents into the JSON text area. This gives your Lambda function permission to publish to SNS.
 16. Select **Review Policy**
 17. .... in progress
 
