@@ -75,14 +75,17 @@ AWS requires that we grant services permission to talk to each other.  You are c
 11. Scroll down to the code editor.  Delete the contents.  Copy and paste the contents from the **importantDates.py** file in Github into the editor
 12. Click **Save**
 
-### Step 4 - Update the Lambda Function
+### Step 4 - Update the Region
 1. Code line 23, update region, if necessary. If in the US changing this is not necessary. https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html
+2. Click **Save**
 
 ```python
 region_name="us-east-1"     #---- EDIT HERE, if necessary ------
 ```
 
-2. Code line 33, add your important dates by editing and copy and pasting the example. The event name, such as "Amy's Birthday" must be **unique**.  The year is irrelevant.
+### Step 5 - Add your important dates
+
+1. Add your important dates by editing and copy and pasting the example. The event name, such as "Amy's Birthday" must be **unique**.  The year is irrelevant. They do not have to be in chronological order, but it sure helps for maintaining your list.
 
 ```python
     # --- EDIT HERE - ADD YOUR IMPORTANT DATES -----
@@ -92,9 +95,64 @@ region_name="us-east-1"     #---- EDIT HERE, if necessary ------
     "Time to take over the world!": "1900-07-07",
     # --- END EDIT -----
 ```
+2. Click **Save**
 
+### Step 5 - Add your environment variable / phone number
+1. In the **Key** input under Environment variables, type **PHONE_NUM**. Must be exact.
+2. In the **Value** input enter your phone number.  For example, a U.S. phone number would appear as **+1XXX5550100**
+3. Click **Save**
 
 ### Step 5 - Test Lambda Function
+1. Click the **Test** button
+2. Enter an **Event name**, such as "doNotFailMe". Template should be "Hello World".
+2. Click **Create**.
+3. Add a temporary event with today's date to test daily reminders.
+
+```python
+    # --- EDIT HERE - ADD YOUR IMPORTANT DATES -----
+    "It works?": "1900-09-26",
+    # --- END EDIT -----
+```
+4. Click **Save**
+5. Click **Test**.  Execution Results at the bottom of screen should display **"statusCode": 200**. You should also have received your SMS message on the phone number provided.
+6. Remove your temporary date and **Save**
+
+#### Optional - Test monthly alerts
+1. Locate the section of code for **MONTHLY REMINDERS** inside the lambda_handler function.
+
+```python
+def lambda_handler(event, context):
+    
+    # ---- MONTHLY REMINDERS ---------------
+    # Loop through dictionary of events
+    # Convert string date to a datetime object
+    # Compare dictionary date to today's date
+    # Executes on the first day of the month
+    if today.day == 1:      # EDIT HERE TO TEST
+```
+
+2. Change the **1** to today's day of the month. For me, today is the 26th.
+
+```python
+if today.day == 26:   
+```
+3. Make sure you have 2 or more events taking place in the current month.  For me, it is September.
+
+```python
+    # --- EDIT HERE - ADD YOUR IMPORTANT DATES -----
+    "Deadline for Evil Master Plan 2.4": "1900-09-10",
+    "League of Villians Annual Meeting": "1900-09-26",
+    "Cheat day: do something heroic!": "1900-09-29",
+    # --- END EDIT -----
+```
+
+3. Click **Save**
+4. Click **Test**. Execution Results at the bottom of screen should display **"statusCode": 200**. You should also have received your SMS message on the phone number provided.
+5. Revert code to original value and **save**
+
+```python
+if today.day == 1:   
+```
 
 ### Step 6 - Create Cloudwatch Event
 
