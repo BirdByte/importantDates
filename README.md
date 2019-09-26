@@ -155,4 +155,22 @@ if today.day == 1:
 ```
 
 ### Step 6 - Create Cloudwatch Event
+1. In the Designer at the top of the top, click the **+ Add trigger** button
+2. Click the dropdown and type **CloudWatch**. Select **CloudWatch Events**
+3. In the Rule dropdown, select **Create a new rule**
+4. Enter a **rule name**, such as "dailyMorningTrigger"
+5. Ensure that **Schedule expression** is selected
+6. In the **schedule expression** input your Cron expression. Copy and paste mine below or create your own. Mine triggers around 6:00 am for me, so take timezones into account. Adjust to your needs. cron(minute hour day-of-month month day-of-week year)
+
+> cron(0 11 * * ? *)
+
+##### Breakdown:
+* 0 minutes
+* 11 hour
+* \* every day
+* \* every month
+* ? no specific day of the week
+* \* every year
+
+7. Click **Add**
 
