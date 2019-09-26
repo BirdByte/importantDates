@@ -27,8 +27,6 @@ While this project alone is unlikely to exceed free tier you should know your bo
 > CloudWatch - https://aws.amazon.com/cloudwatch/pricing/
 
 
-## --------------- Tutorial in progress --------------------
-
 ### Step 1 - Create an AWS Account, if necessary
 While this project stays within the free tier account provided by AWS, you will still need to enter **credit card** information to complete the account sign-up.
 
