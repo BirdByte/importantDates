@@ -46,7 +46,7 @@ def lambda_handler(event, context):
     # Convert string date to a datetime object
     # Compare dictionary date to today's date
     # Executes on the first day of the month
-    if today.day == 18:
+    if today.day == 1:
         print('EXECUTING MONTHLY REMINDERS')
         for eventName, eventDate in importantDates.items():
             eventDateConverted = datetime.datetime.strptime(eventDate, "%Y-%m-%d")   
