@@ -6,13 +6,22 @@ Whether you have any knowledge of AWS or coding, this documentation written with
 
 >**Level:** Beginner
 
->**Cost:** Free Tier.  Do not send over 100 SMS messages per month.
+>**Cost:** Free Tier.
 
 *Disclaimer:* I do not claim to be an expert. This is my first AWS project and my first time using Python.
 
 <p align="center">
   <img src="/images/diagram.PNG"/>
 </p>
+
+## Pricing
+While this project alone is unlikely to exceed free tier you should know your boundaries, and the cost to you if you exceeded those limits.
+
+> Lambda - https://aws.amazon.com/lambda/pricing/
+
+> SNS - https://aws.amazon.com/sns/pricing/
+
+> CloudWatch - https://aws.amazon.com/cloudwatch/pricing/
 
 
 ## --------------- Tutorial in progress --------------------
@@ -67,17 +76,20 @@ AWS requires that we grant services permission to talk to each other.  You are c
 12. Click **Save**
 
 ### Step 4 - Update the Lambda Function
-1. Optional - Code line 23, update region. If in the US changing this is not necessary. https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html
+1. Code line 23, update region, if necessary. If in the US changing this is not necessary. https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html
 
 ```python
 region_name="us-east-1"     #---- EDIT HERE, if necessary ------
 ```
 
-2. Code line 33, add your important dates by editing and copy and pasting example 
+2. Code line 33, add your important dates by editing and copy and pasting the example. The event name, such as "Amy's Birthday" must be **unique**.  The year is irrelevant.
 
 ```python
     # --- EDIT HERE - ADD YOUR IMPORTANT DATES -----
+    "May the Fourth be with you!": "1900-05-04",
+    "Don't forget to get Amy an amazing gift": "1900-05-25",
     "Amy's Birthday": "1900-06-01",
+    "Time to take over the world!": "1900-07-07",
     # --- END EDIT -----
 ```
 
